@@ -68,14 +68,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 50,
               ),
               Container(
-                width: 200,
-                height: 200,
+                width: 600,
+                height: 800,
+                margin: EdgeInsets.only(bottom: 50),
                 child: AspectRatio(
                   aspectRatio: controller!.value.aspectRatio,
                   child: CameraPreview(controller!),
                 ),
               ),
-              TextButton(
+              ElevatedButton(
                   onPressed: () async {
                     try {
                       final image = await controller!.takePicture();
@@ -86,11 +87,12 @@ class _MyHomePageState extends State<MyHomePage> {
                       print(e);
                     }
                   },
-                  child: Text("Take Photo")),
+                  child: Text("사진을 찍으세요!!", style: TextStyle(fontSize: 60, fontWeight: FontWeight.w700), )
+              ),
               if (imagePath != "")
                 Container(
-                    width: 300,
-                    height: 300,
+                    width: 75,
+                    height: 100,
                     child: Image.file(
                       File(imagePath),
                     ))
