@@ -37,7 +37,7 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
       if (!mounted) {
         return;
       }
-    });
+      setState(() {});
     printerManager.scanResults.listen((devices) async {
       // print('UI: Devices found ${devices.length}');
       setState(() {
