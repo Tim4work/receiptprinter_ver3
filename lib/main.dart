@@ -252,6 +252,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   _buildCameraView() {
+    if (!controller!.value.isInitialized) {
+      return const Center(child: CircularProgressIndicator());
+    }
     return AspectRatio(
       aspectRatio: 1 / controller!.value.aspectRatio,
       child: CameraPreview(controller!),
