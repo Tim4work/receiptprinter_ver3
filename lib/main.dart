@@ -58,6 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
         return;
       }
       setState(() {});
+    });
+
     printerManager.scanResults.listen((devices) async {
       // print('UI: Devices found ${devices.length}');
       setState(() {
